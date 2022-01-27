@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Metadata>
+  <Property key="Product.Version" value="2" />
+  <Property key="LicenseIDs" value="GrainSize" />
+  <Property key="Job.Category" value="@WorkbenchCategories_MaterialModules" />
+  <Property key="Job.SubCategory" value="@WorkbenchSubCategories_Grains" />
+  <Property key="Document.Description" value="@FormTemplates_Grains.Description" />
+  <Property key="Document.Title" value="FMG-Main Form" />
+  <Property key="File.Name" value="FMG-Main Form.czform" />
+  <Property key="File.CreationTime" value="2021-11-08T14:28:11.6226774+08:00" type="System.DateTime" />
+  <Property key="File.Size" value="47634" type="System.Int64" />
+  <Property key="File.LastWriteTime" value="2021-11-08T15:17:58.8588293+08:00" type="System.DateTime" />
+  <Property key="File.Type" value="CZFORM" />
+  <Property key="Attachments" value="FMG-Main Form.czform.thumb.png|FMG-Main Form.czform.preview.png" />
+  <Property key="Thumbnail" value="FMG-Main Form.czform.thumb.png" />
+  <Property key="Preview" value="FMG-Main Form.czform.preview.png" />
+  <Property key="Job.Status" value="Draft" />
+  <Property key="Document.CreationTime" value="2021-07-14T11:20:00+08:00" type="System.DateTime" />
+  <Property key="Document.Rating" value="0" type="System.Int32" />
+  <Property key="Document.Keywords" value="" />
+  <Property key="File.Author" value="04cd17cc-5461-4a61-bcf4-d13bfe974263" />
+  <Property key="Document.Author" value="04cd17cc-5461-4a61-bcf4-d13bfe974263" />
+  <Property key="Document.Comment" value="" />
+  <Property key="Form.IsMultiLanguage" value="true" type="System.Boolean" />
+  <Property key="Document.AuthorDisplayName" value="Supervisor" />
+  <Property key="Document.LastWriteTime" value="2021-11-03T11:28:55.5915536+08:00" type="System.DateTime" />
+</Metadata>

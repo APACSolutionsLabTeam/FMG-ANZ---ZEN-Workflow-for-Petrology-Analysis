@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Metadata>
+  <Property key="Document.Title" value="FMG_ANZ_Final_Version" />
+  <Property key="Document.Description" value="Custom ZEN Core Job template for multiphase analysis followed by grain size analysis of petrography samples" />
+  <Property key="Job.Category" value="Material Analysis" />
+  <Property key="Job.SubCategory" value="Multiphase Analysis, Grain Size Analysis" />
+  <Property key="Document.Keywords" value="Grains" />
+  <Property key="Document.Comment" value="Grains Size Analysis - Planimetric Trainable job" />
+  <Property key="Product.Version" value="0" />
+  <Property key="Thumbnail" value="thumb.png" />
+  <Property key="LicenseIDs" value="GrainSize, Intellesis" />
+  <Property key="File.Name" value="GrainsPlanimetricTrainable.czjob" />
+  <Property key="File.CreationTime" value="2021-11-08T14:28:11.5307284+08:00" type="System.DateTime" />
+  <Property key="File.Size" value="285245" type="System.Int64" />
+  <Property key="File.LastWriteTime" value="2021-11-08T15:17:58.7667774+08:00" type="System.DateTime" />
+  <Property key="File.Type" value="CZJOB" />
+  <Property key="Document.LastWriteTime" value="2021-11-08T15:17:58.7597746+08:00" type="System.DateTime" />
+  <Property key="Attachments" value="thumb.png|Image Analysis Settings/Multiphase.czias|Image Analysis Settings/GrainsPlanimetric.czias|Macros/FMG-ANZ 1 - Get_czmodel_bin_options_grain_phase_GUI.czmac|Macros/FMG-ANZ 2 - Instantiate_cum_area_overall_result_table.czmac|Macros/FMG-ANZ 5 - Load_binary_mask.czmac|Macros/FMG-ANZ 6 - Read_and_modify_grain_overall_result_table.czmac|Macros/FMG-ANZ 7 - Area_histogram.czmac|Macros/FMG-ANZ 3 - Reset_existing_analysis.czmac|Forms/FMG-Main Form.czform|Macros/FMG-ANZ 4 - Extract_binary_mask_from_czmodel.czmac|Reports/FMG_ANZ_Combined_Report_Template_Multiphase_Grain_Size_Analysis.docx" />
+  <Property key="Job.Status" value="Draft" />
+  <Property key="Document.CreationTime" value="2021-07-14T11:20:06+08:00" type="System.DateTime" />
+  <Property key="Job.AccessControlList" value="*" />
+  <Property key="Job.SystemAccessControlList" value="*" />
+  <Property key="Document.Rating" value="0" type="System.Int32" />
+  <Property key="File.Author" value="04cd17cc-5461-4a61-bcf4-d13bfe974263" />
+  <Property key="Document.AuthorDisplayName" value="Supervisor" />
+  <Property key="Document.Author" value="04cd17cc-5461-4a61-bcf4-d13bfe974263" />
+</Metadata>

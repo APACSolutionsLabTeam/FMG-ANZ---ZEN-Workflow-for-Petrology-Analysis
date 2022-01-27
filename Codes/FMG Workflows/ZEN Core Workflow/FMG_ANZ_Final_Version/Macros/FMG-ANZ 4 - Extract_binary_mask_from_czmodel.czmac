@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Script>
+  <Context>Zen26</Context>
+  <Version>1.0</Version>
+  <Language>Python</Language>
+  <Text>import os
+import re
+
+for out in Zen.Application.GetAllOutputParameters():
+    #print(out.Id)
+    print('String', str(type(out.Value)))
+    if out.Id == 'czmodel':
+        czmodel = out.Value
+        print(czmodel)
+    if out.Id == 'czmodel_folder':
+        czmodel_folder = out.Value
+        print(czmodel) 
+    if out.Id == 'grain_phase':
+        grain_phase = out.Value
+    if out.Id == 'grain_phase_list':
+        grain_phase_list = out.Value   
+    if out.Id == 'selected_grain_phase_table':
+        selected_grain_phase_table = out.Value  
+    if out.Id == 'metadata_info_table':
+        metadata_info_table = out.Value  
+        
+    if str(type(out.Value))=="&lt;type 'ZenImage'&gt;":
+        image=out.Value
+
+czmodel_frm_zenblue=ZenIntellesis.Segmentation.ImportModel(czmodel_folder + r'/'+ czmodel,True)
+
+image = Zen.Application.ActiveWorkbench.GetDefaultInputValue()
+
+binary_mask = Zen.Processing.Segmentation.TrainableSegmentation(image, os.path.splitext(czmodel)[0])
+Zen.Application.ActiveWorkbench.SetOutputValue(binary_mask, 'Binary_Mask')
+
+
+desired_channel_num = grain_phase_list.index(grain_phase)
+binary_mask_one_channel = Zen.Processing.Utilities.CreateSubset(binary_mask, 'C('+str(desired_channel_num+1)+')' , True, False)
+Zen.Application.ActiveWorkbench.SetOutputValue(binary_mask_one_channel, 'binary_mask_one_channel')
+
+## Image metadata
+
+resolution = image.Metadata.ScalingMicron
+metadata_info_table.SetValue(0, 1, resolution)
+
+
+
+get_RL_TL = image.Metadata.ChannelsDyeName
+if 'TL' in get_RL_TL:
+    TL_or_RL = "TL"
+else:
+    TL_or_RL = "RL"
+
+#print(TL_or_RL)
+metadata_info_table.SetValue(1, 1,TL_or_RL )
+
+contrast_method = image.Metadata.ContrastMethod
+if contrast_method == 'Fluorescence':
+    FL_or_BF = 'Fluorescence'
+else:
+   FL_or_BF = 'Not Fluorescence'
+   
+#print(FL_or_BF)
+   
+metadata_info_table.SetValue(2, 1, FL_or_BF)
+
+Zen.Application.ActiveWorkbench.SetOutputValue(metadata_info_table, 'metadata_info_table')
+Zen.Application.ActiveWorkbench.SetOutputValue(selected_grain_phase_table, 'selected_grain_phase_table')
+
+
+
+
+</Text>
+  <Author></Author>
+  <Description></Description>
+  <Keywords></Keywords>
+  <Row>40</Row>
+  <Column>46</Column>
+</Script>

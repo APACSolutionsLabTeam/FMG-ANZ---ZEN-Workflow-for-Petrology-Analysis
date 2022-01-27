@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Script>
+  <Context>Zen26</Context>
+  <Version>1.0</Version>
+  <Language>Python</Language>
+  <Text>#######################################################
+## GENERATE AREA HISTOGRAM FOR THE GRAINS
+##
+## Macro name: Histogram-DES-OAD-2.czmac (ZEN core)
+##
+## Author name: ZSMMATHE@APAC
+##
+## Required modules: Grain Size Analysis
+##
+## READ THE GRAIN SIZE ANALYSIS RESULTS, MODIFY THE HISTOGRAM CHART
+## TO PLOT DISTRIBUTION in % (Y-AXIS) IN RELATION TO AREA 
+## (We are currently showing it in relation to the number of Grains)
+##
+## Copyright(C) 2021 by Carl Zeiss Microscopy GmbH.
+## Permission is granted to use, modify and distribute this code,
+## as long as this copyright notice remains part of the code.
+## 
+#######################################################
+##
+## Import required libraries
+import time
+from System.Diagnostics import Process
+import math
+import os
+import System
+##
+## Clear the ZEN macro editor
+Zen.Application.MacroEditor.ClearMessages()
+##
+
+## Define global variable 
+table_cum_exists = False
+
+
+##
+## Get cumulative table (output parameter) from ZEN Core workbench
+for out in Zen.Application.GetAllOutputParameters():
+    #print(out)
+    if type(out.Value) is ZenTable:
+        #print(out.Value.Name)
+        if out.Value.Name == "cum_table":
+            cum_table = out.Value
+            print(cum_table)
+
+##
+## Load the Grain and Grains document 
+##
+table_grain=Zen.Application.GetDocument('Grain')
+table_grains=Zen.Application.GetDocument('Grains')
+
+##
+##Get the indices of columns of Area, RegionsArea, Is FrameTouched
+##
+AIG=table_grain.Columns.IndexOf('Area')
+print('Index of Column Area Grain: ', AIG)
+AIGs=table_grains.Columns.IndexOf('RegionsArea')
+print('Index of Column Area Grains: ', AIGs)
+FTI=table_grain.Columns.IndexOf('IsFrameTouched')
+print('Index of Frame Touch Area : ', FTI)
+##
+
+##
+## Get total area of grains and total number of grains
+##
+AreaSum=table_grains.GetValue(0,AIGs)
+print('Total Area of Grains: ', AreaSum)
+## Get total number of Grains
+grain_count=table_grain.RowCount
+print('Total Number of Grains: ', grain_count)
+##
+
+##
+## Generating the Frame Array and Area Array
+## Note: Data from this loop is not used
+##
+
+AreaArray=[]
+FrameTouchArray=[]
+for i in range(grain_count):
+    area1=table_grain.GetValue(i,AIG)
+    AreaArray.append(area1)
+    frametouch1=table_grain.GetValue(i,FTI)
+    #print(frametouch1)
+    FrameTouchArray.append(frametouch1)
+
+##
+## Define and build a new ZEN Table for Area and add No.(number) and Area columns
+##
+area_table=ZenTable()
+area_table.Name='Area_Table'
+area_table.Columns.Add('No:')
+area_table.Columns.Add('Area')
+
+
+for i in range(grain_count):
+    area_table.SetValue(i,0,i)
+    area_table.SetValue(i,1,table_grain.GetValue(i,AIG))
+##
+
+##
+## Populate the cumulative table    
+cum_table.AppendContent(area_table)
+print("Cumulative Number of Grains", cum_table.RowCount)
+##
+
+##
+## Output the area table
+##
+Zen.Application.ActiveWorkbench.SetDefaultOutputValue(area_table)
+##
+##############################################################################
+
+
+</Text>
+  <Author></Author>
+  <Description></Description>
+  <Keywords></Keywords>
+  <Row>1</Row>
+  <Column>1</Column>
+</Script>

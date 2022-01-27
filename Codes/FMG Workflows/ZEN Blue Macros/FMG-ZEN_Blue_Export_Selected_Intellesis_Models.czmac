@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Script>
+  <Context>Zen26</Context>
+  <Version>1.0</Version>
+  <Language>Python</Language>
+  <Text>#######################################################
+## EXPORT SELECTED INTELLESIS MODELS FROM ZEN BLUE
+##
+## Macro name: FMG-ZEN_Blue_Export_Selected_Intellesis_Models.czmac
+## 
+## Author: APAC Digital Solutions Team
+##
+## GUI TO SELECT THE REQUIRED ZEN BLUE INTELLESIS MODELS TO
+## TRANSFER TO ZEN CORE
+##
+## Copyright (c) 2021 by Carl Zeiss Microscopy GmbH.
+## Permission is granted to use, modify and distribute this code,
+## as long as this copyright notice remains part of the code.
+#######################################################
+
+
+## import required libraries
+import xml.dom.minidom as minidom
+from System.IO import File, Directory, Path, FileInfo
+import os
+import shutil
+
+## Clear macro editor
+Zen.Application.MacroEditor.ClearMessages()
+
+## User-defined function to create a folder
+def create_directory(createFolder):
+    ## check directory exists or not and create a new one
+    
+    if os.path.exists(createFolder):
+        #shutil.rmtree(createFolder)
+        #os.mkdir(createFolder)
+        print("Folder exists")
+    else:
+        os.mkdir(createFolder)
+        #print("Destination Folder Created")
+##
+
+## Generate a list of available Intellesis Models in ZEN Blue Model-Repository (can be User/Public documents*)
+docfolder = Zen.Application.Environment.GetFolderPath(ZenSpecialFolder.UserDocuments)
+
+Intellesis_Model_Repository = Path.Combine(docfolder, 'Model-Repository')
+
+#ZenCore_public_dir =  Zen.Application.Environment.GetFolderPath(ZenSpecialFolder.WorkgroupDocuments)# gives ZEN Blue public document folder
+ZenCore_public_dir = r'C:/Users/Public/Documents/Carl Zeiss/ZENcore/Documents'
+
+## Define destination folder for exporting the czmodels
+dest_folder = ZenCore_public_dir + r'/ZENBlueIntellesisModels'
+
+## Define global variables -initilaize lists for model names and corresponding alphanumeric name and training status
+czmodel_list = []
+czmodel_alphanum_list = []
+training_status_list = []
+
+## Looping over all the files in The Intellesis Model Repository in ZEN Blue to  
+## populate the model information (name, alphanumeric name, training status) lists
+for file in os.listdir(Intellesis_Model_Repository):
+    if file.endswith('.xml'):
+        #print(os.path.splitext(file)[0])
+        
+        ## Initialize a dictionary to store parsed xml data
+        dic={}
+        dom = minidom.parse(Intellesis_Model_Repository +r'/'+ file)
+        root = dom.documentElement
+        
+        ## Extract model name from the XML file
+        dic['ModelName']=root.getElementsByTagName('ModelName')[0].firstChild.data
+        #print(dic['ModelName'])
+        czmodel_list.append(dic['ModelName'])
+        
+        
+        ## Extract training status from XML file
+        dic['Status']=root.getElementsByTagName('Status')[0].firstChild.data
+        training_status = dic['Status']
+        training_status_list.append(dic['Status'])
+        
+        ## Extract alphanum model name from the XML filename itself
+        czmodel_alphanum_name = os.path.splitext(file)[0]
+        czmodel_alphanum_list.append(czmodel_alphanum_name)
+        
+#print(czmodel_list)
+#print(training_status_list)
+#print(czmodel_alphanum_list)
+
+## Set up the GUI dialog window to select the Intellesis Model
+GUIDialog = ZenWindow()
+GUIDialog.Initialize('Select the Intellesis Model To Transfer to ZEN Core')
+#GUIDialog.AddDropDown('czmodel', 'Select Intellesis Model', czmodel_list, 0)
+for i in range (czmodel_list.Count):
+    GUIDialog.AddCheckbox('czmodel'+str(i+1),czmodel_list[i], False)
+
+## Show the GUI window
+result = GUIDialog.Show()
+## Print message if the macro is cancelled
+if result.HasCanceled:
+    message = 'Macro was canceled by user.'
+    print(message)
+    raise SystemExit
+##
+## Else execute the macro
+else:
+    ## Get the values from GUI dialog and store them
+    czmodels_to_export = []
+    
+    ## Extract the model names selected from he GUI
+    for i in range(czmodel_list.Count):
+        
+        if(str(result.GetValue('czmodel'+str(i+1)))) == "True":
+            print(czmodel_list[i])
+            czmodel_temp = czmodel_list[i]
+            czmodels_to_export.append(czmodel_temp)
+    
+    #print(czmodels_to_export)
+    
+    ## Get the alphanum and training status of the selected model name
+    ## And copy the trained models to destination folder
+    num_trained_models = 0
+    for n in range(czmodels_to_export.Count):
+        
+        print(czmodels_to_export[n])
+        
+        selected_model_temp = czmodels_to_export[n]
+        selected_model_temp_index = ([index for index in range(len(czmodel_list)) if czmodel_list[index] == selected_model_temp])
+        czmodel_name = selected_model_temp
+        czmodel_alphanum_name = czmodel_alphanum_list[selected_model_temp_index[0]]
+        
+        print(selected_model_temp_index)
+        
+        ## Copy the trained models to destination folder
+        if training_status_list[selected_model_temp_index[0]] == 'Trained':
+           
+            ## Create folder with the czmodel name for each trained model in the destination directory
+            create_directory(dest_folder + r'/'+ czmodel_name) 
+        
+            ## Copy associated .model and .xml files to the czmodel folder (for each trained model)
+            shutil.copy(Intellesis_Model_Repository+r'/'+czmodel_alphanum_name+'.xml', dest_folder + r'/'+czmodel_name)
+            shutil.copy(Intellesis_Model_Repository+r'/'+czmodel_alphanum_name+'.model', dest_folder + r'/'+czmodel_name)
+            
+            ## If modelid==alphnum file is not present in the czmodel folder, create one using os.open command
+            if not os.path.exists(dest_folder + r'/'+czmodel_name + r'/' + 'modelid='+czmodel_alphanum_name):
+               os.open( dest_folder + r'/'+czmodel_name +r'/'+'modelid='+czmodel_alphanum_name, os.O_RDWR | os.O_CREAT)
+            
+            ## Show progress infor to the user
+            Zen.Application.ProgressInfo.Show('Exporting the Intellesis Model: '+ czmodel_name) 
+            num_trained_models = num_trained_models + 1
+        
+        else:
+           Zen.Application.Pause('The selected model ' + czmodel_name + ' has not been trained. \nPlease train the model before export')
+           
+if num_trained_models != 0:    
+    ## Zipping the czfolder and renaming to czmodel
+    folders = list(filter(lambda x: os.path.isdir(os.path.join(dest_folder, x)), os.listdir(dest_folder)))
+    #print(folders)
+    
+    for folder in folders:
+       ## Create archive/zip file for each czmodel folder
+       shutil.make_archive(dest_folder + r'/'+ folder, 'zip', dest_folder + r'/'+ folder)
+       
+       ## Get basename of zip folder
+       base = os.path.splitext(dest_folder + r'/'+ folder+'.zip')[0] 
+       
+       ## If .czmodel file already exists, remove it (the model may have changed for this run! so, need to overwrite)
+       if os.path.exists(base + ".czmodel"):
+         os.remove(base + ".czmodel") 
+    
+       ## Rename .zip to .czmodel
+       os.rename(dest_folder + r'/'+ folder+'.zip', base + ".czmodel")
+       
+    ## Finished exporting czmodel files message to the user
+    Zen.Application.Pause('Finished exporting the selected ZEN Blue Intellesis Models to  ' + dest_folder + '. \nNow please proceed to analysis of down sampled images in ZEN Core')   
+##
+######################################################################################################
+</Text>
+  <Author></Author>
+  <Description></Description>
+  <Keywords></Keywords>
+  <Row>167</Row>
+  <Column>8</Column>
+</Script>

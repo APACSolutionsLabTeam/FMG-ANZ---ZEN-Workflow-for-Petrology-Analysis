@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Script>
+  <Context>Zen26</Context>
+  <Version>1.0</Version>
+  <Language>Python</Language>
+  <Text>overall_result_table_temp=Zen.Application.ActiveWorkbench.GetDefaultInputValue()
+#print(overall_result_table_temp.GetValue(0,4))
+
+for out in Zen.Application.GetAllOutputParameters():
+    #print(out.Id)
+    #print('String', str(type(out.Value)))
+    if out.Id == 'overall_result_table':
+        overall_result_table = out.Value
+        
+    if out.Id == 'iteration_table':
+        iteration_table = out.Value    
+
+# Number of iterations of images
+number_iterations = iteration_table.GetValue(0,0)
+
+
+overall_result_table.AppendContent(overall_result_table_temp)
+overall_result_table.SetValue(int(number_iterations),0, "Image "+ str(number_iterations))
+Zen.Application.ActiveWorkbench.SetOutputValue(overall_result_table, '')
+
+
+
+number_iterations_new = int(number_iterations) + 1
+iteration_table.SetValue(0,0,number_iterations_new)
+
+
+## Load the Grain and Grains document 
+##
+#table_grain=Zen.Application.GetDocument('Untitled3031')
+#overall_result_table=Zen.Application.Documents.
+#print(overall_result_table.Columns[2])
+
+"""
+table_grains=Zen.Application.GetDocument('Grains')
+
+##
+##Get the indices of columns of Area, RegionsArea, Is FrameTouched
+##
+AIG=table_grain.Columns.IndexOf('Area')
+print('Index of Column Area Grain: ', AIG)
+AIGs=table_grains.Columns.IndexOf('RegionsArea')
+print('Index of Column Area Grains: ', AIGs)
+FTI=table_grain.Columns.IndexOf('IsFrameTouched')
+print('Index of Frame Touch Area : ', FTI)
+##
+
+##
+## Get total area of grains and total number of grains
+##
+AreaSum=table_grains.GetValue(0,AIGs)
+print('Total Area of Grains: ', AreaSum)
+## Get total number of Grains
+grain_count=table_grain.RowCount
+print('Total Number of Grains: ', grain_count)
+##
+
+temp = Zen.Application.GetDocument('Grains')
+row_count = temp.RowCount
+for i in range(row_count):
+    print(temp.GetValue(i, 0))
+#import os
+#for out in Zen.Application.GetAllOutputParameters():
+   #print(out)
+   
+   #if type(out.Value) is ZenTable:
+        #print(out.Value.Name)
+        #if out.Value.Name == "cum_table":
+
+"""
+
+</Text>
+  <Author></Author>
+  <Description></Description>
+  <Keywords></Keywords>
+  <Row>18</Row>
+  <Column>53</Column>
+</Script>

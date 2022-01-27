@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImageAnalysisSetting>
+  <Version>1.1</Version>
+  <TilingMode>NoTiling</TilingMode>
+  <TileSize>0</TileSize>
+  <MaxParticleSize>0</MaxParticleSize>
+  <MaxDisplaySize>3500</MaxDisplaySize>
+  <HiliteColor>#FFEE82EE</HiliteColor>
+  <HiliteLineWidth>2</HiliteLineWidth>
+  <AllowHierarchy>false</AllowHierarchy>
+  <Script Name="Builtin Multichannel">
+    <SegmenterSource>SegmenterGrainsPlanimetric</SegmenterSource>
+  </Script>
+  <SubImageDimension>C</SubImageDimension>
+  <IsProtectedAdd>true</IsProtectedAdd>
+  <IsProtectedRemove>true</IsProtectedRemove>
+  <DefaultSelectedRegionClass>Grain</DefaultSelectedRegionClass>
+  <RegionClass Name="Base" Id="0">
+    <Type>Or</Type>
+    <Color>#FFFF0000</Color>
+    <DrawWidth>0</DrawWidth>
+    <DrawColor>#FFFF0000</DrawColor>
+    <DrawColorEnabled>false</DrawColorEnabled>
+    <IsProtectedRemove>true</IsProtectedRemove>
+    <ParametersCollection>
+      <Parameters Key="Segmentation" Name="SegmenterClassBuiltinDefault" />
+    </ParametersCollection>
+    <RegionClass Name="ForeignPhases" Id="1">
+      <Type>Collection</Type>
+      <ChannelName>Magnetite</ChannelName>
+      <Color>#FF00FF00</Color>
+      <DrawWidth>0</DrawWidth>
+      <DrawColor>#FF00FF00</DrawColor>
+      <DrawColorEnabled>false</DrawColorEnabled>
+      <IsProtectedRemove>true</IsProtectedRemove>
+      <IsProtectedName>true</IsProtectedName>
+      <RegionClass Name="ForeignPhase" Id="2">
+        <Type>Single</Type>
+        <ChannelName>Magnetite</ChannelName>
+        <Color>#FF00FF00</Color>
+        <DrawWidth>0</DrawWidth>
+        <DrawColor>#FF00FF00</DrawColor>
+        <DrawColorEnabled>false</DrawColorEnabled>
+        <IsProtectedRemove>true</IsProtectedRemove>
+        <IsProtectedName>true</IsProtectedName>
+        <ParametersCollection>
+          <Parameters Key="Segmentation" Name="SegmenterClassBuiltinDefault">
+            <Parameter Key="GrainsSegmenterForeignPhaseSectionTitleKey">
+              <Name>@ImageAnalysisWizard_GrainsDetectionForeignPhaseTitleText</Name>
+              <Source>Header</Source>
+              <FontWeight>Bold</FontWeight>
+              <SkipSeparatorAfter>true</SkipSeparatorAfter>
+            </Parameter>
+            <Parameter Key="ThresholdHistogram1">
+              <Name>ThresholdHistogram1</Name>
+              <Source>ThresholdHistogram</Source>
+              <Minimum1>0</Minimum1>
+              <ValueLower1>0</ValueLower1>
+              <ValueUpper1>7</ValueUpper1>
+              <Maximum1>255</Maximum1>
+              <Minimum2>0</Minimum2>
+              <ValueLower2>0</ValueLower2>
+              <ValueUpper2>0</ValueUpper2>
+              <Maximum2>255</Maximum2>
+              <Minimum3>0</Minimum3>
+              <ValueLower3>0</ValueLower3>
+              <ValueUpper3>0</ValueUpper3>
+              <Maximum3>255</Maximum3>
+              <IsHLS>false</IsHLS>
+              <IsValid1>true</IsValid1>
+              <IsValid2>false</IsValid2>
+              <IsValid3>false</IsValid3>
+              <AnalysisThresholdMode>Click</AnalysisThresholdMode>
+              <AutomaticThresholdMethod>Otsu</AutomaticThresholdMethod>
+              <AnalysisThresholdShapeMode>Polygon</AnalysisThresholdShapeMode>
+              <IsEnabledAutomaticThreshold>false</IsEnabledAutomaticThreshold>
+              <PickSize>1</PickSize>
+              <PickTolerance>3</PickTolerance>
+              <IsDisabledClickParameters>true</IsDisabledClickParameters>
+              <IsDisabledToleranceAndNeighbor>true</IsDisabledToleranceAndNeighbor>
+              <MinimumFloat1>0</MinimumFloat1>
+              <ValueLowerFloat1>0</ValueLowerFloat1>
+              <ValueUpperFloat1>0</ValueUpperFloat1>
+              <MaximumFloat1>0</MaximumFloat1>
+              <MinimumFloat2>0</MinimumFloat2>
+              <ValueLowerFloat2>0</ValueLowerFloat2>
+              <ValueUpperFloat2>0</ValueUpperFloat2>
+              <MaximumFloat2>0</MaximumFloat2>
+              <MinimumFloat3>0</MinimumFloat3>
+              <ValueLowerFloat3>0</ValueLowerFloat3>
+              <ValueUpperFloat3>0</ValueUpperFloat3>
+              <MaximumFloat3>0</MaximumFloat3>
+              <LuminosityPeak>0</LuminosityPeak>
+              <LuminosityRelativePeak>0</LuminosityRelativePeak>
+            </Parameter>
+          </Parameters>
+        </ParametersCollection>
+      </RegionClass>
+    </RegionClass>
+    <RegionClass Name="Grains" Id="3">
+      <Type>Collection</Type>
+      <ChannelName>Magnetite</ChannelName>
+      <Color>#FFB3B3B3</Color>
+      <DrawWidth>0</DrawWidth>
+      <DrawColor>#FFB3B3B3</DrawColor>
+      <DrawColorEnabled>false</DrawColorEnabled>
+      <IsProtectedRemove>true</IsProtectedRemove>
+      <IsProtectedName>true</IsProtectedName>
+      <Features>
+        <Features>
+          <Feature Name="G_ISO">
+            <IsProtected>true</IsProtected>
+          </Feature>
+          <Feature Name="G_ASTM">
+            <IsProtected>true</IsProtected>
+          </Feature>
+          <Feature Name="GrainsN1">
+            <IsProtected>true</IsProtected>
+          </Feature>
+          <Feature Name="GrainsN2">
+            <IsProtected>true</IsProtected>
+          </Feature>
+          <Feature Name="GrainsN">
+            <IsProtected>true</IsProtected>
+          </Feature>
+          <Feature Name="GrainsG">
+            <IsProtected>true</IsProtected>
+          </Feature>
+          <Feature Name="GrainsM">
+            <IsProtected>true</IsProtected>
+          </Feature>
+          <Feature Name="GrainsA">
+            <IsProtected>true</IsProtected>
+          </Feature>
+          <Feature Name="GrainsD">
+            <IsProtected>true</IsProtected>
+          </Feature>
+          <Feature Name="GrainsIsCircle">
+            <IsProtected>true</IsProtected>
+          </Feature>
+          <Feature Name="RegionsCount">
+            <IsProtected>true</IsProtected>
+          </Feature>
+          <Feature Name="RegionsArea">
+            <IsProtected>true</IsProtected>
+          </Feature>
+          <Feature Name="FrameArea">
+            <IsProtected>true</IsProtected>
+          </Feature>
+        </Features>
+      </Features>
+      <RegionClass Name="Grain" Id="4">
+        <Type>Single</Type>
+        <ChannelName>Magnetite</ChannelName>
+        <Color>#FFB3B3B3</Color>
+        <DrawWidth>0</DrawWidth>
+        <DrawColor>#FFB3B3B3</DrawColor>
+        <DrawColorEnabled>false</DrawColorEnabled>
+        <IsProtectedRemove>true</IsProtectedRemove>
+        <IsProtectedName>true</IsProtectedName>
+        <SegmentSourceType>External</SegmentSourceType>
+        <IsRegionDrawFeaturesDisabled>true</IsRegionDrawFeaturesDisabled>
+        <IsRegionsDrawFeaturesColorDisabled>true</IsRegionsDrawFeaturesColorDisabled>
+        <ParametersCollection>
+          <Parameters Key="Segmentation" Name="SegmenterClassBuiltinDefault" />
+        </ParametersCollection>
+        <InteractiveParameters>
+          <Parameter Key="RegionEdit1">
+            <Name>@ImageAnalysisWizard_InteractiveMethodRegionEdit</Name>
+            <Source>RegionEditGrains</Source>
+            <IsInteractive>false</IsInteractive>
+            <EditMethod>Cut</EditMethod>
+            <IsDisabled>93267</IsDisabled>
+          </Parameter>
+        </InteractiveParameters>
+        <Conditions>
+          <Condition Key="MinMax1">
+            <Name>MinMax</Name>
+            <Source>ConditionMinMax</Source>
+            <IsHidden>false</IsHidden>
+          </Condition>
+        </Conditions>
+        <Features>
+          <Features>
+            <Feature Name="ID">
+              <IsProtected>true</IsProtected>
+            </Feature>
+            <Feature Name="IsFrameTouched">
+              <IsProtected>true</IsProtected>
+            </Feature>
+            <Feature Name="Area">
+              <IsProtected>true</IsProtected>
+            </Feature>
+          </Features>
+        </Features>
+      </RegionClass>
+    </RegionClass>
+  </RegionClass>
+  <ShowClassSelectionOnlyOnSetupStep>true</ShowClassSelectionOnlyOnSetupStep>
+  <CommonParameters Key="Segmentation" Name="SegmenterClassBuiltinDefault" HideHeaderText="true">
+    <Parameter Key="GrainsSegmenterGrainsSectionTitleKey">
+      <Name>@ImageAnalysisWizard_GrainsDetectionGrainsSectionTitleText</Name>
+      <Source>Header</Source>
+      <FontWeight>Bold</FontWeight>
+      <SkipSeparatorAfter>true</SkipSeparatorAfter>
+    </Parameter>
+    <Parameter Key="GrainBoundariesTypeSelection1">
+      <Name>GrainBoundariesTypeSelection1</Name>
+      <Source>GrainBoundariesTypeSelection</Source>
+      <Value>Dark</Value>
+      <SkipSeparatorAfter>true</SkipSeparatorAfter>
+    </Parameter>
+    <Parameter Key="ValleysSigma">
+      <Name>@ImageAnalysisWizard_ValleysSigma</Name>
+      <Source>Double</Source>
+      <Minimum>0.4</Minimum>
+      <Value>45.786567433797615</Value>
+      <Maximum>100</Maximum>
+      <SmallChange>0.1</SmallChange>
+      <LargeChange>1</LargeChange>
+      <SkipSeparatorAfter>true</SkipSeparatorAfter>
+    </Parameter>
+    <Parameter Key="ValleysThreshold">
+      <Name>@ImageAnalysisWizard_ValleysThreshold</Name>
+      <Source>Double</Source>
+      <Minimum>0</Minimum>
+      <Value>0.36527692474441964</Value>
+      <Maximum>1</Maximum>
+      <SmallChange>0.01</SmallChange>
+      <LargeChange>0.1</LargeChange>
+      <SkipSeparatorAfter>true</SkipSeparatorAfter>
+    </Parameter>
+    <Parameter Key="MaximumArea">
+      <Name>@ImageAnalysisWizard_ScrapMaximumArea</Name>
+      <Source>Area</Source>
+      <Minimum>1</Minimum>
+      <Value>27</Value>
+      <Maximum>100</Maximum>
+      <SmallChange>1</SmallChange>
+      <IsEnabledScaled>true</IsEnabledScaled>
+      <SkipSeparatorAfter>true</SkipSeparatorAfter>
+    </Parameter>
+    <Parameter Key="LowpassKernelSize">
+      <Name>@ImageAnalysisWizard_LowpassKernelSize</Name>
+      <Source>KernelSize</Source>
+      <Minimum>3</Minimum>
+      <Value>29</Value>
+      <Maximum>99</Maximum>
+      <SmallChange>1</SmallChange>
+      <SkipSeparatorAfter>true</SkipSeparatorAfter>
+    </Parameter>
+  </CommonParameters>
+  <RegionClassTemplate Name="RootTemplate" Id="0">
+    <Type>Or</Type>
+    <Color>#FFFF0000</Color>
+    <DrawWidth>0</DrawWidth>
+    <DrawColor>#FFFF0000</DrawColor>
+    <DrawColorEnabled>false</DrawColorEnabled>
+  </RegionClassTemplate>
+  <AnalysisStepCollection>
+    <AnalysisStep Name="Class">
+      <MustExecute>true</MustExecute>
+      <IsInteractive>false</IsInteractive>
+      <Header>@ImageAnalysisWizard_StepClassPhases</Header>
+    </AnalysisStep>
+    <AnalysisStep Name="Frame">
+      <MustExecute>true</MustExecute>
+      <IsInteractive>false</IsInteractive>
+    </AnalysisStep>
+    <AnalysisStep Name="Segmentation">
+      <MustExecute>true</MustExecute>
+      <IsInteractive>false</IsInteractive>
+      <IsDisabledClassSegmenterSelection>true</IsDisabledClassSegmenterSelection>
+      <ShowAllRegions>false</ShowAllRegions>
+    </AnalysisStep>
+    <AnalysisStep Name="Interactive">
+      <MustExecute>true</MustExecute>
+      <IsInteractive>false</IsInteractive>
+      <IsDisabledClassSegmenterSelection>true</IsDisabledClassSegmenterSelection>
+      <RegionFill>false</RegionFill>
+    </AnalysisStep>
+    <AnalysisStep Name="Features">
+      <MustExecute>true</MustExecute>
+      <IsInteractive>false</IsInteractive>
+    </AnalysisStep>
+    <AnalysisStep Name="Measure">
+      <MustExecute>true</MustExecute>
+      <IsInteractive>false</IsInteractive>
+      <IsDisabledMeasureStepParameters>true</IsDisabledMeasureStepParameters>
+    </AnalysisStep>
+  </AnalysisStepCollection>
+  <AnalysisViewOptionCollection />
+  <ChannelDescriptionCollection />
+  <AnalysisFrameTeach>
+    <Source>AnalysisFrameDefault</Source>
+  </AnalysisFrameTeach>
+  <AnalysisFrameRun>
+    <Source>AnalysisFrameDefault</Source>
+  </AnalysisFrameRun>
+  <AnalysisFeatures>
+    <Source>AnalysisFeaturesDefault</Source>
+  </AnalysisFeatures>
+  <AnalysisClass>
+    <Source>AnalysisClassDefault</Source>
+  </AnalysisClass>
+  <AnalysisClassSelect>
+    <Source>ClassSelectSourceSkip</Source>
+  </AnalysisClassSelect>
+  <MeasureFrame>
+    <FrameMode>Cut</FrameMode>
+    <IsFrameMaximize>false</IsFrameMaximize>
+    <GraphicLayer>
+      <Usage>Edit</Usage>
+      <IsProtected>false</IsProtected>
+      <IsAnimationEnabled>false</IsAnimationEnabled>
+      <AnimationDimension>None</AnimationDimension>
+      <LayerFlags>1</LayerFlags>
+      <Elements />
+    </GraphicLayer>
+  </MeasureFrame>
+  <GraphSetting>
+    <ChartType>XYPlot</ChartType>
+    <SelectedItemX>ID</SelectedItemX>
+    <SelectedItemY>Area</SelectedItemY>
+    <TimeSeriesEnabled>false</TimeSeriesEnabled>
+    <HeatmapEnabled>false</HeatmapEnabled>
+    <MultiScenesEnabled>false</MultiScenesEnabled>
+    <Enabled>true</Enabled>
+  </GraphSetting>
+</ImageAnalysisSetting>

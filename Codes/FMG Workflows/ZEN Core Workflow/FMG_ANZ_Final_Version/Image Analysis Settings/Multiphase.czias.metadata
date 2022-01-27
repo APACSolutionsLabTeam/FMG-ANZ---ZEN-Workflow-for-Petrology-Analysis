@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Metadata>
+  <Property key="File.Name" value="Multiphase.czias" />
+  <Property key="Job.Group" value="" />
+  <Property key="Job.GroupItem" value="" />
+  <Property key="IAS.SegmenterType" value="SegmenterMultiPhase" />
+  <Property key="LicenseIDs" value="Multiphase" />
+  <Property key="File.CreationTime" value="2021-11-08T14:28:11.5477096+08:00" type="System.DateTime" />
+  <Property key="File.Size" value="76841" type="System.Int64" />
+  <Property key="File.LastWriteTime" value="2021-11-08T15:17:58.7917789+08:00" type="System.DateTime" />
+  <Property key="File.Type" value="CZIAS" />
+  <Property key="Attachments" value="" />
+  <Property key="Document.CreationTime" value="2021-07-14T11:20:02+08:00" type="System.DateTime" />
+  <Property key="Document.Title" value="" />
+  <Property key="Document.Description" value="" />
+  <Property key="Document.Rating" value="0" type="System.Int32" />
+  <Property key="Document.Keywords" value="" />
+  <Property key="File.Author" value="04cd17cc-5461-4a61-bcf4-d13bfe974263" />
+  <Property key="Document.LastWriteTime" value="2021-11-08T15:17:58.7337763+08:00" type="System.DateTime" />
+  <Property key="Document.Comment" value="" />
+  <Property key="Document.Author" value="04cd17cc-5461-4a61-bcf4-d13bfe974263" />
+  <Property key="Document.AuthorDisplayName" value="Supervisor" />
+</Metadata>

@@ -1,0 +1,1320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form>
+  <Metadata>
+    <IsTwoColumnLayout>true</IsTwoColumnLayout>
+    <Title>FMG-Main Form</Title>
+    <Description>@FormTemplates_Grains.Description</Description>
+    <IsTabOrderColumnByColumn>true</IsTabOrderColumnByColumn>
+    <Comment></Comment>
+    <Languages>de;en</Languages>
+    <IsMultilanguage>true</IsMultilanguage>
+    <Author>04cd17cc-5461-4a61-bcf4-d13bfe974263</Author>
+    <Keywords></Keywords>
+    <CustomAttributes />
+  </Metadata>
+  <Fields>
+    <Parameter Id="Name" Name="Grains Analysis" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="IsText" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>10</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>60</Value>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Korngrößen-Analyse</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Grain Size Analysis</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="Standard information" Name="Standard information" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="IsText" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>70</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Verwendete Norm</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Standard information</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="Standard" Name="Standard" LocalizeId="GrainsStandard_Text" DataType="Value-Text-Pair" ResourceId="Grains.Standard">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>combobox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>110</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="ItemsList" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>No standard</LocalValue>
+                <Text>@GrainsStandard_NoStandard|No standard</Text>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>ASTM E112</LocalValue>
+                <Text>@GrainsStandard_ASTME112|ASTM E112</Text>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>ASTM E1382</LocalValue>
+                <Text>@GrainsStandard_ASTME1382|ASTM E1382</Text>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>ISO 643</LocalValue>
+                <Text>@GrainsStandard_ISO643|ISO 643</Text>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>GB/T 6394</LocalValue>
+                <Text>@GrainsStandard_GBT6394|GB/T 6394</Text>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="IsMandatory" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="LicenseIDs" DataType="string">
+          <Value>GrainSize</Value>
+        </Parameter>
+      </Metadata>
+      <Value>No standard</Value>
+    </Parameter>
+    <Parameter Id="Sample information" Name="Sample information" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="IsText" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>150</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Informationen zur Probe</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="SampleNumber" Name="Sample name or number" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>190</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Probenname/-nummer</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Sample name or number</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="PlaceOfSampleTaking" Name="Sampling location" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>230</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Probenbereich</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Sampling location</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="NumberOfSamples" Name="Number of samples" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>270</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Anzahl der Proben</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Number of samples</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="NumberOfMicrographs" Name="Number of micrographs" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>310</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Anzahl der Aufnahmen</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Number of images</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="LotNumber" Name="Lot number" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>350</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Los-Nummer</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Lot number</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="GrindingNumber" Name="Grinding number" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>390</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Schleif-Nummer</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Grinding number</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="Material name" Name="Material name" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>430</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Werkstoff</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Material name</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="PreparationSteps" Name="Preparation steps" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>470</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Probenvorbereitung</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Preparation steps</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="Etching" Name="Etching" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>510</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Ätzung</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Etching</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="HeatingTreatmentTemperature" Name="Heat treatment" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>550</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Wärmebehandlung</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Heat treatment</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="Measurement information" Name="Measurement information" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="IsText" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>600</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Informationen zur Messung</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Measurement information</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="DateMeasurement" Name="Evaluation date and time" LocalizeId="" DataType="datetime" ResourceId="System.Now" IsReadOnly="true">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>650</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Datum / Zeit</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Evaluation date and time</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="Description" Name="Description" LocalizeId="" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>690</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="double">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="double">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="IsEnabled" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>Beschreibung</LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>Description</LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="Magnification of Objective" Name="Magnification of Objective" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>combobox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>730</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="int">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="int">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="ItemsList" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue>5x</LocalValue>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>10x</LocalValue>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>20x</LocalValue>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue>40x</LocalValue>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="User Information" Name="User Information" DataType="string">
+      <Metadata>
+        <Parameter Id="IsText" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>770</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="int">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="int">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="User Name" Name="User Name" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>810</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="int">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="int">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="Position" Name="Position" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>850</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="int">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="int">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+    <Parameter Id="Company Name" Name="Company Name" DataType="string">
+      <Metadata>
+        <Parameter Id="SuggestedUIElement" DataType="string">
+          <Value>textbox</Value>
+        </Parameter>
+        <Parameter Id="X" DataType="double">
+          <Value>0</Value>
+        </Parameter>
+        <Parameter Id="Y" DataType="double">
+          <Value>890</Value>
+        </Parameter>
+        <Parameter Id="Width" DataType="int">
+          <Value>400</Value>
+        </Parameter>
+        <Parameter Id="Height" DataType="int">
+          <Value>40</Value>
+        </Parameter>
+        <Parameter Id="LocalizedLabels" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>English</Text>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="LocalizedToolTips" TypeKey="MetadataList" DataType="persistable">
+          <ComplexValue>
+            <MetadataList>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Text>German</Text>
+                <Id>de</Id>
+              </MetadataListItem>
+              <MetadataListItem>
+                <LocalValue></LocalValue>
+                <Id>en</Id>
+              </MetadataListItem>
+            </MetadataList>
+          </ComplexValue>
+        </Parameter>
+        <Parameter Id="IsMultilanguage" DataType="boolean">
+          <Value>True</Value>
+        </Parameter>
+      </Metadata>
+      <Value></Value>
+    </Parameter>
+  </Fields>
+</Form>

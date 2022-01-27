@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Script>
+  <Context>Zen26</Context>
+  <Version>1.0</Version>
+  <Language>Python</Language>
+  <Text>## Import required libraries
+import os
+import re
+import shutil
+from System.IO import File, Directory, FileInfo, Path
+import xml.etree.ElementTree as ET
+import System
+
+##
+## clear the macro editor console output
+Zen.Application.MacroEditor.ClearMessages()
+##
+ZenCore_public_dir =  Zen.Application.Environment.GetFolderPath(ZenSpecialFolder.WorkgroupDocuments)
+czmodel_folder = ZenCore_public_dir + r'\ZENBlueIntellesisModels'
+
+czmodel_list = []
+for file in os.listdir(czmodel_folder):
+    if file.endswith('.czmodel'):
+       #print(file)
+       czmodel_list.append(file)
+## print(czmodel_list)
+
+## Set up main GUI
+GUI_main_window = ZenWindow()
+GUI_main_window.Initialize('Select the Intellesis Model')
+GUI_main_window.AddDropDown('czmodel', 'Select Intellesis Model', czmodel_list, 0)
+result = GUI_main_window.Show()
+
+if result.HasCanceled:
+    message = 'Macro was canceled by user.'
+    print(message)
+    raise SystemExit
+##
+## Else execute the macro
+else:
+    ## Get the values from GUI dialog and store them
+    czmodel = str(result.GetValue('czmodel'))
+   
+    print('Intellesis Model selected: ', czmodel)
+    
+    ## Get list of phases from the czmodel xml file
+    xml_folder_path = czmodel_folder + r'/' + os.path.splitext(czmodel)[0]
+    
+    for file in os.listdir(xml_folder_path):
+        #print(file)
+        ## Read XML file to get list of phases
+        if file.endswith('.xml'):
+            tree = ET.parse(xml_folder_path + r'/'+ file)
+            root = tree.getroot()
+            
+            xml_as_string = ET.tostring(root, encoding='utf8').decode('utf8')
+            
+            grain_phase_list = re.findall(r'Name="(.*?)"', xml_as_string)
+            grain_phase_list = [x for x in grain_phase_list if os.path.splitext(x)[-1].lower() == '']
+    
+    print(grain_phase_list)
+
+    
+    ## Set up the GUI dialog window for selecting the desired grain phase for analysis
+    GUIDialog = ZenWindow()
+    GUIDialog.Initialize('Select Desired Phase for Grain Size Analysis')
+    GUIDialog.AddDropDown('grain_phase', 'Select Desired Phase for Grain Size Analysis', grain_phase_list, 0)
+    
+    ## Show the GUI window
+    result = GUIDialog.Show()
+    ## Print message if the macro is cancelled
+    if result.HasCanceled:
+        message = 'Macro was canceled by user.'
+        print(message)
+        raise SystemExit
+    ##
+    ## Else execute the macro
+    else:
+        ## Get the values from GUI dialog and store them
+        grain_phase = str(result.GetValue('grain_phase'))
+        
+        print('Grain Phase selected for analysis: ', grain_phase)
+        
+selected_grain_phase_table = ZenTable()    
+selected_grain_phase_table.Columns.Add('Selected Grain Phase')
+selected_grain_phase_table.Columns.Add('Selected Grain Phase Color')
+
+selected_grain_phase_table.SetValue(0, 0, grain_phase)
+selected_grain_phase_table.SetValue(0, 1, 'Gray')
+#selected_grain_phase_table.SetValue(0, 1, '#808080')
+#selected_grain_phase_table.SetValue(0, 1,Color.FromArgb(0, 128, 128, 128))
+Zen.Application.ActiveWorkbench.SetOutputValue(selected_grain_phase_table, 'selected_grain_phase_table')
+
+        
+Zen.Application.ActiveWorkbench.SetOutputValue(czmodel, 'czmodel')
+Zen.Application.ActiveWorkbench.SetOutputValue(czmodel_folder, 'czmodel_folder')
+Zen.Application.ActiveWorkbench.SetOutputValue(grain_phase, 'grain_phase')
+Zen.Application.ActiveWorkbench.SetOutputValue(grain_phase_list, 'grain_phase_list')
+
+      
+   
+</Text>
+  <Author></Author>
+  <Description></Description>
+  <Keywords></Keywords>
+  <Row>86</Row>
+  <Column>2</Column>
+</Script>

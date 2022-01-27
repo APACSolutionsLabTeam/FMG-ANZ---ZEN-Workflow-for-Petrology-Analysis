@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Script>
+  <Context>Zen26</Context>
+  <Version>1.0</Version>
+  <Language>Python</Language>
+  <Text>import os
+for out in Zen.Application.GetAllOutputParameters():
+   # print('ID',out.Id)
+    #print('String', str(type(out.Value)))
+    if out.Id == 'binary_mask_one_channel':
+        print(out.Value)
+        binary_mask_image = out.Value
+
+Zen.Application.ActiveWorkbench.SetDefaultOutputValue(binary_mask_image)
+
+
+</Text>
+  <Author></Author>
+  <Description></Description>
+  <Keywords></Keywords>
+  <Row>8</Row>
+  <Column>1</Column>
+</Script>

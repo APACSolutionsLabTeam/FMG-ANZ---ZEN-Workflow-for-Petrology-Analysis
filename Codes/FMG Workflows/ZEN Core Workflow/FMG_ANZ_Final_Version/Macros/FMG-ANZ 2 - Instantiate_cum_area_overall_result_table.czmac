@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Script>
+  <Context>Zen26</Context>
+  <Version>1.0</Version>
+  <Language>Python</Language>
+  <Text>import System
+
+cum_table_values=ZenTable()
+cum_table_values.Name="cum_table"
+
+Zen.Application.ActiveWorkbench.SetOutputValue(cum_table_values, "cum_table")
+
+Zen.Application.ActiveDocument = cum_table_values
+
+overall_result_table=ZenTable()
+overall_result_table.Name = "overall_result_table"
+overall_result_table.Columns.Add("Image")
+overall_result_table.Columns.Add("Grain Size [µm²]")
+overall_result_table.Columns.Add("Number of Grains")
+
+Zen.Application.ActiveWorkbench.SetOutputValue(overall_result_table, "overall_result_table")
+
+iteration_table = ZenTable()
+iteration_table.Columns.Add("Count of Iterations")
+iteration_table.SetValue(0,0,0)
+
+Zen.Application.ActiveWorkbench.SetOutputValue(iteration_table, "iteration_table")
+
+metadata_info_table = ZenTable()
+metadata_info_table.Columns.Add("Image Information")
+metadata_info_table.Columns.Add("Values")
+metadata_info_table.SetValue(0, 0, 'Resolution in μm/pixel')
+metadata_info_table.SetValue(1, 0, 'TL/RL')
+metadata_info_table.SetValue(2, 0, 'Fluorescence or not?')
+Zen.Application.ActiveWorkbench.SetOutputValue(metadata_info_table, 'metadata_info_table')
+</Text>
+  <Author></Author>
+  <Description></Description>
+  <Keywords></Keywords>
+  <Row>27</Row>
+  <Column>61</Column>
+</Script>

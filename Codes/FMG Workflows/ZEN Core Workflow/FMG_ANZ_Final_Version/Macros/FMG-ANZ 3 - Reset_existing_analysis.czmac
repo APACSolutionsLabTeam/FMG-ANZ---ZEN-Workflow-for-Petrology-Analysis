@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Script>
+  <Context>Zen26</Context>
+  <Version>1.0</Version>
+  <Language>Python</Language>
+  <Text>
+image = Zen.Application.ActiveWorkbench.GetDefaultInputValue()
+
+
+## Remove existing analysis from the image
+Zen.Analyzing.ResetAnalysisResult(image)
+
+Zen.Application.ActiveWorkbench.SetDefaultOutputValue(image)
+
+
+
+
+
+</Text>
+  <Author></Author>
+  <Description></Description>
+  <Keywords></Keywords>
+  <Row>12</Row>
+  <Column>1</Column>
+</Script>
